@@ -9,12 +9,14 @@ class PageController < ApplicationController
     end
   end
 
+  # only used by heroku scheduler: PageController.new.send_mail
   def send_mail
     @url = "http://www.whwater.com/news/tstz/"
     @planned_notices = fetch_notices "http://www.whwater.com/news/jhxts/Index.html"
     @emergent_notices = fetch_notices "http://www.whwater.com/news/tfxts/Index.html"
-    TabWaterMailer.tab_water_info(@planned_notices, @emergent_notices, @url).deliver
-    render json: { success: true }
+    if changed_in_website?
+      TabWaterMailer.tab_water_info(@planned_notices, @emergent_notices, @url).deliver
+    end
   end
 
   private
