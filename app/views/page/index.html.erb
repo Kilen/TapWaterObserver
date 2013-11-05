@@ -1,6 +1,14 @@
 <h1>武汉停水通知</h1>
+<h3>计划性停水</h3>
 <ul>
-  <% @notices.each do |notice| %>
+  <% @planned_notices.each do |notice| %>
+    <li><%= "#{notice[:time]}:  #{notice[:event]}" %></li>
+  <% end %>
+</ul>
+
+<h3>突发性停水</h3>
+<ul>
+  <% @emergency_notices.each do |notice| %>
     <li><%= "#{notice[:time]}:  #{notice[:event]}" %></li>
   <% end %>
 </ul>
