@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131105150851) do
+ActiveRecord::Schema.define(version: 20131105151937) do
 
   create_table "notices", force: true do |t|
     t.string   "time"
     t.string   "event"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "notice_type"
   end
 
 end

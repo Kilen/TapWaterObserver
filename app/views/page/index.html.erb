@@ -8,7 +8,7 @@
 
 <h3>突发性停水</h3>
 <ul>
-  <% @emergency_notices.each do |notice| %>
+  <% @emergent_notices.each do |notice| %>
     <li><%= "#{notice[:time]}:  #{notice[:event]}" %></li>
   <% end %>
 </ul>
