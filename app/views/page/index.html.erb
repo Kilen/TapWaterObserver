@@ -1,2 +1,8 @@
-<h1>Page#index</h1>
-<p>Find me in app/views/page/index.html.erb</p>
+<h1>武汉停水通知</h1>
+<ul>
+  <% @notices.each do |notice| %>
+    <li><%= "#{notice[:time]}:  #{notice[:event]}" %></li>
+  <% end %>
+</ul>
+<br />
+Grab from <%= link_to "武水在线停水信息", @url %>
