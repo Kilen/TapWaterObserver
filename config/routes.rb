@@ -1,4 +1,4 @@
 TapWaterObserver::Application.routes.draw do
   root "page#index"
-  get "page/index"
+  get "send_mail" => "page#send_mail"
 end

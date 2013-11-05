@@ -1,0 +1,16 @@
+<h1>武汉停水通知</h1>
+<h3>计划性停水</h3>
+<ul>
+  <% @planned_notices.each do |notice| %>
+    <li><%= "#{notice[:time]}:  #{notice[:event]}" %></li>
+  <% end %>
+</ul>
+
+<h3>突发性停水</h3>
+<ul>
+  <% @emergent_notices.each do |notice| %>
+    <li><%= "#{notice[:time]}:  #{notice[:event]}" %></li>
+  <% end %>
+</ul>
+<br />
+Grab from <%= link_to "武水在线停水信息", @url %>
